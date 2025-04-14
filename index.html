@@ -1,187 +1,121 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>МБОУ "Школа для детей с ОВЗ" - Движение Первых</title>
+    <title>Движение Первых — Лысьва</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
             --primary-color: #1d70b7;
             --secondary-color: #ffd500;
         }
-        
+
         body {
-            font-family: 'Arial', sans-serif;
-            background: #f8f9fa;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f6f8;
         }
 
-        .header {
-            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            padding: 2rem;
+        .navbar {
+            background-color: var(--primary-color) !important;
+        }
+
+        header {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
             color: white;
+            padding: 3rem 1rem;
             text-align: center;
         }
 
-        .movement-section {
-            padding: 3rem 0;
-            background: white;
-            border-radius: 15px;
-            margin: 2rem 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        #team {
+            padding: 4rem 1rem;
         }
 
-        .accordion-button:not(.collapsed) {
+        #team h2 {
+            font-weight: bold;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: none;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+        }
+
+        .card-img-top {
+            object-fit: cover;
+            height: 300px;
+            background-color: #e9ecef;
+        }
+
+        footer {
             background-color: var(--primary-color);
             color: white;
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -12px;
-            background-color: white;
-            border: 4px solid var(--primary-color);
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-
-        @media (max-width: 768px) {
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
+            padding: 1.5rem 0;
         }
     </style>
 </head>
+
 <body>
-    <!-- Шапка -->
-    <header class="header">
-        <h1>Первичное отделение «Движения Первых»</h1>
-        <p>МБОУ "Школа для детей с ОВЗ" • г. Лысьва • Основано 01.09.2024</p>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Движение Первых</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1 class="display-4">Добро пожаловать!</h1>
+            <p class="lead">Сайт отделения "Движения Первых" при МБОУ "Школа для детей с ОВЗ" г. Лысьва</p>
+        </div>
     </header>
 
-    <!-- Основной контент -->
-    <div class="container">
-        <!-- О движении -->
-        <section class="movement-section">
-            <h2 class="text-center mb-5">О Движении Первых</h2>
-            
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5>Цели движения</h5>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Воспитание молодого поколения</li>
-                                <li class="list-group-item">Организация полезного досуга</li>
-                                <li class="list-group-item">Создание равных возможностей</li>
-                                <li class="list-group-item">Поддержка государственной политики</li>
-                            </ul>
+    <section id="team" class="bg-white">
+        <div class="container">
+            <h2 class="text-center">Наша команда</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+                <!-- Участники команды -->
+                <!-- Просто дублируем шаблон карточки и меняем имя и ссылку -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://vk.com/images/camera_200.png" class="card-img-top" alt="Юлия Гайсина">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Юлия Гайсина</h5>
+                            <p class="card-text">Руководитель отделения</p>
+                            <a href="https://vk.com/yuliyagaisina" class="btn btn-outline-primary" target="_blank">Профиль VK</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5>Направления работы</h5>
-                            <div class="accordion" id="directionsAccordion">
-                                <div class="accordion-item">
-                                    <h3 class="accordion-header">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" 
-                                                data-bs-target="#collapseOne">
-                                            Основные направления
-                                        </button>
-                                    </h3>
-                                    <div id="collapseOne" class="accordion-collapse collapse show" 
-                                         data-bs-parent="#directionsAccordion">
-                                        <div class="accordion-body">
-                                            <ul>
-                                                <li>Образование и знания</li>
-                                                <li>Наука и технологии</li>
-                                                <li>Спорт и здоровый образ жизни</li>
-                                                <li>Волонтёрство</li>
-                                                <li>Патриотическое воспитание</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <div class="col"><div class="card h-100"><img src="https://vk.com/images/camera_200.png" class="card-img-top" alt="Артём Маракулин"><div class="card-body text-center"><h5 class="card-title">Артём Маракулин</h5><p class="card-text">Актив движения</p><a href="https://vk.com/kiko34fr" class="btn btn-outline-primary" target="_blank">Профиль VK</a></div></div></div>
+                <div class="col"><div class="card h-100"><img src="https://vk.com/images/camera_200.png" class="card-img-top" alt="Максим Ермилов"><div class="card-body text-center"><h5 class="card-title">Максим Ермилов</h5><p class="card-text">Актив движения</p><a href="https://vk.com/id734213349" class="btn btn-outline-primary" target="_blank">Профиль VK</a></div></div></div>
+                <div class="col"><div class="card h-100"><img src="https://vk.com/images/camera_200.png" class="card-img-top" alt="Александр Назаров"><div class="card-body text-center"><h5 class="card-title">Александр Назаров</h5><p class="card-text">Актив движения</p><a href="https://vk.com/id855947630" class="btn btn-outline-primary" target="_blank">Профиль VK</a></div></div></div>
+                <div class="col"><div class="card h-100"><img src="https://vk.com/images/camera_200.png" class="card-img-top" alt="Денис Бородин"><div class="card-body text-center"><h5 class="card-title">Денис Бородин</h5><p class="card-text">Актив движения</p><a href="https://vk.com/id559885059" class="btn btn-outline-primary" target="_blank">Профиль VK</a></div></div></div>
+                <div class="col"><div class="card h-100"><img src="https://vk.com/images/camera_200.png" class="card-img-top" alt="Костя Титов"><div class="card-body text-center"><h5 class="card-title">Костя Титов</h5><p class="card-text">Разработчик сайта</p><a href="https://vk.com/kostrzxc" class="btn btn-outline-primary" target="_blank">Профиль VK</a></div></div></div>
+                <div class="col"><div class="card h-100"><img src="https://vk.com/images/camera_200.png" class="card-img-top" alt="Матвей Андреев"><div class="card-body text-center"><h5 class="card-title">Матвей Андреев</h5><p class="card-text">Актив движения</p><a href="https://vk.com/id855948749" class="btn btn-outline-primary" target="_blank">Профиль VK</a></div></div></div>
+                <div class="col"><div class="card h-100"><img src="https://vk.com/images/camera_200.png" class="card-img-top" alt="Анастасия Аржанова"><div class="card-body text-center"><h5 class="card-title">Анастасия Аржанова</h5><p class="card-text">Актив движения</p><a href="https://vk.com/id758721530" class="btn btn-outline-primary" target="_blank">Профиль VK</a></div></div></div>
+                <div class="col"><div class="card h-100"><img src="https://vk.com/images/camera_200.png" class="card-img-top" alt="Даниил Слепцов"><div class="card-body text-center"><h5 class="card-title">Даниил Слепцов</h5><p class="card-text">Актив движения</p><a href="https://vk.com/id660438464" class="btn btn-outline-primary" target="_blank">Профиль VK</a></div></div></div>
+                <div class="col"><div class="card h-100"><img src="https://vk.com/images/camera_200.png" class="card-img-top" alt="Никита Казанцев"><div class="card-body text-center"><h5 class="card-title">Никита Казанцев</h5><p class="card-text">Актив движения</p><a href="https://vk.com/id855956289" class="btn btn-outline-primary" target="_blank">Профиль VK</a></div></div></div>
+                <div class="col"><div class="card h-100"><img src="https://vk.com/images/camera_200.png" class="card-img-top" alt="Валерия"><div class="card-body text-center"><h5 class="card-title">Валерия</h5><p class="card-text">Актив движения</p><a href="https://vk.com/id855958141" class="btn btn-outline-primary" target="_blank">Профиль VK</a></div></div></div>
 
-            <!-- Этапы вступления -->
-            <div class="mt-5">
-                <h4 class="mb-4">Как вступить в движение:</h4>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h5>1. Регистрация</h5>
-                        <p>Создать аккаунт на официальном сайте движения</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h5>2. Подача заявления</h5>
-                        <p>Выбрать подходящее отделение и отправить заявку</p>
-                    </div>
-                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Блок команды (будет заполнен позже) -->
-        <section class="team-section" id="team">
-            <h2 class="text-center mb-5">Наша команда</h2>
-            <div class="row" id="teamContainer">
-                <!-- Данные будут добавлены после получения информации -->
-            </div>
-        </section>
-    </div>
+    <footer class="text-center">
+        <div class="container">
+            &copy; 2025 Движение Первых — Лысьва. Все права защищены.
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Скрипт для динамической загрузки команды
-        document.addEventListener('DOMContentLoaded', function() {
-            // Пример данных (заменить на реальные)
-            const teamData = [
-                {name: 'Юлия Гайсина', role: 'Руководитель', vk: 'yuliyagaisina', photo: 'placeholder.jpg'}
-            ];
-
-            const container = document.getElementById('teamContainer');
-            
-            teamData.forEach(member => {
-                const card = `
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="${member.photo}" class="card-img-top" alt="${member.name}">
-                            <div class="card-body">
-                                <h5 class="card-title">${member.name}</h5>
-                                <p class="card-text">${member.role}</p>
-                                <a href="https://vk.com/${member.vk}" class="btn btn-primary">Профиль VK</a>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                container.innerHTML += card;
-            });
-        });
-    </script>
 </body>
+
 </html>
